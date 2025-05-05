@@ -88,7 +88,7 @@
         return "00000".substring(0, 6 - c.length) + c;
       }
 
-      fetch('denver_neighborhoods.geojson')
+      fetch('denver_neighborhoods.json')
       .then(response => response.json())
       .then(data => {
         const uniqueNeighborhoods = new Set();
