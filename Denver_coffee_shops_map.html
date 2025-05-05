@@ -117,7 +117,8 @@
           const div = L.DomUtil.create('div', 'legend');
           div.innerHTML += '<strong>Neighborhoods</strong><br>';
           Array.from(uniqueNeighborhoods).sort().forEach(name => {
-            div.innerHTML += `<i style="background:#999"></i>${name}<br>`;
+            const color = neighborhoodColors[name] || '#' + intToRGB(hashCode(name));
+            div.innerHTML += `<i style=\"background:${color}\"></i>${name}<br>`;
           });
           return div;
         };
