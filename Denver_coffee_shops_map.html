@@ -71,17 +71,7 @@
       marker.bindPopup(`<b>${shop.name}</b><br>Rank: ${shop.rank}<br>Score: ${shop.score}<br>Neighborhood: ${shop.neighborhood}`);
     });
 
-    const legend = L.control({position: 'bottomright'});
-        legend.onAdd = function(map) {
-          const div = L.DomUtil.create('div', 'legend');
-          div.innerHTML += '<strong>Neighborhoods</strong><br>';
-          Array.from(uniqueNeighborhoods).sort().forEach(name => {
-            const color = neighborhoodColors[name] || '#' + intToRGB(hashCode(name));
-            div.innerHTML += `<i style="background:${color}"></i>${name}<br>`;
-          });
-          return div;
-        };
-        legend.addTo(map);
+    
 
     // Placeholder for inserting full GeoJSON neighborhood data inline
     // Generate stable color from string
